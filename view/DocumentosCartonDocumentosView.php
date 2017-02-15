@@ -603,12 +603,12 @@
        </form>
        </div>
        </div>
-<<<<<<< HEAD
+
 	    <br>
 		 <br> <br> <br> <br> <br>
-=======
+
 	     <br>
->>>>>>> branch 'master' of https://github.com/mannyalbert81/ad_territorial.git
+
         <footer class="col-lg-12">
            <?php include("view/modulos/footer.php"); ?>
         </footer>
