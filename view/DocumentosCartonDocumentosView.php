@@ -603,7 +603,12 @@
        </form>
        </div>
        </div>
+
+	    <br>
+		 <br> <br> <br> <br> <br>
+
 	     <br>
+
         <footer class="col-lg-12">
            <?php include("view/modulos/footer.php"); ?>
         </footer>

@@ -110,18 +110,27 @@
 							<th>RUC-CI</th>
 							<th>Cliente/Proveedor</th>
 							<th>Carton Documentos</th>
-							<th>Cheque</th>
-							<th>Documento</th>
-							<th>Nombre Emision </th>
-							<th>Nombre Archivo </th>
+							<th>Nombre Lecturas</th>
+							<th>Número Tarjetas</th>
+							<th>Etapa Documentos</th>
+							<th>Número Documentos</th>
+							<th>Número Cheque</th>
+							<th>Nombre Emisión</th>
+							<th>Asunto</th>
+							<th>Remitente</th>
+							<th>Destinatario</th>
+							<th>Número Control</th>						
 							<th>Fecha de Subida</th>
+						
+							
 							<th></th>
 							<th></th>
 						</tr>
 					</thead>
 					<tbody>
 		<?php foreach ($resultSet as $res){?>
-									
+					
+					
 						<tr>
 							<td style="color:#000000;font-size:80%;"><?php echo $res->id_documentos_legal; ?></td>
 							<td style="color:#000000;font-size:80%;"><?php echo $res->fecha_documentos_legal; ?></td>
@@ -131,10 +140,16 @@
 							<td style="color:#000000;font-size:80%;"><?php echo $res->ruc_cliente_proveedor; ?></td>
 							<td style="color:#000000;font-size:80%;"><?php echo $res->nombre_cliente_proveedor; ?></td>
 							<td style="color:#000000;font-size:80%;"><?php echo $res->numero_carton_documentos; ?></td>
-							<td style="color:#000000;font-size:80%;"><?php echo $res->numero_cheque_documento_legal; ?></td>
-							<td style="color:#000000;font-size:80%;"><?php echo $res->numero_documentos_legal; ?></td>
-							<td style="color:#000000;font-size:80%;"><?php echo $res->nombre_emision_documentos_legal; ?></td>
 							<td style="color:#000000;font-size:80%;"><?php echo $res->nombre_lecturas; ?></td>
+							<td style="color:#000000;font-size:80%;"><?php echo $res->numero_tarjetas; ?></td>
+							<td style="color:#000000;font-size:80%;"><?php echo $res->etapa_documentos_legal; ?></td>
+							<td style="color:#000000;font-size:80%;"><?php echo $res->numero_documentos_legal; ?></td>
+							<td style="color:#000000;font-size:80%;"><?php echo $res->numero_cheque_documento_legal; ?></td>
+							<td style="color:#000000;font-size:80%;"><?php echo $res->nombre_emision_documentos_legal; ?></td>
+							<td style="color:#000000;font-size:80%;"><?php echo $res->asunto_documentos_legal; ?></td>
+							<td style="color:#000000;font-size:80%;"><?php echo $res->nombre_remitente_documentos_legal; ?></td>
+							<td style="color:#000000;font-size:80%;"><?php echo $res->nombre_destinatario_documentos_legal; ?></td>
+							<td style="color:#000000;font-size:80%;"><?php echo $res->numero_control_documentos_legal; ?></td>
 							<td style="color:#000000;font-size:80%;"><?php echo $res->creado; ?></td>
 							<td><div class="right">						
 							<?php  if ($_SESSION["tipo_usuario"]=="usuario_local") {  ?>
