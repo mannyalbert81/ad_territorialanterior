@@ -115,7 +115,14 @@ class DocumentosController extends ControladorBase{
 		
 					
 					$arraySel = "";
-				    $columnas = "documentos_legal.id_documentos_legal,  documentos_legal.fecha_documentos_legal, categorias.nombre_categorias, subcategorias.nombre_subcategorias, tipo_documentos.nombre_tipo_documentos, cliente_proveedor.nombre_cliente_proveedor, cliente_proveedor.ruc_cliente_proveedor,carton_documentos.numero_carton_documentos, documentos_legal.paginas_documentos_legal, documentos_legal.fecha_desde_documentos_legal, documentos_legal.fecha_hasta_documentos_legal, documentos_legal.ramo_documentos_legal, documentos_legal.numero_poliza_documentos_legal, documentos_legal.ciudad_emision_documentos_legal, soat.cierre_ventas_soat,   documentos_legal.creado , tarjetas.numero_tarjetas, cuentas_bancarias.numero_cuentas_bancarias, lecturas.nombre_lecturas "; 
+				    $columnas = "documentos_legal.id_documentos_legal,  documentos_legal.fecha_documentos_legal, categorias.nombre_categorias, subcategorias.nombre_subcategorias, tipo_documentos.nombre_tipo_documentos, cliente_proveedor.nombre_cliente_proveedor, cliente_proveedor.ruc_cliente_proveedor,carton_documentos.numero_carton_documentos, documentos_legal.paginas_documentos_legal, documentos_legal.fecha_desde_documentos_legal, documentos_legal.fecha_hasta_documentos_legal, documentos_legal.ramo_documentos_legal, documentos_legal.numero_poliza_documentos_legal, documentos_legal.ciudad_emision_documentos_legal, soat.cierre_ventas_soat,   documentos_legal.creado , tarjetas.numero_tarjetas, cuentas_bancarias.numero_cuentas_bancarias, lecturas.nombre_lecturas, documentos_legal.etapa_documentos_legal, 
+								  documentos_legal.numero_documentos_legal, 
+								  documentos_legal.numero_cheque_documento_legal, 
+								  documentos_legal.nombre_emision_documentos_legal, 
+								  documentos_legal.asunto_documentos_legal, 
+								  documentos_legal.nombre_remitente_documentos_legal, 
+								  documentos_legal.nombre_destinatario_documentos_legal, 
+								  documentos_legal.numero_control_documentos_legal"; 
 					$tablas   = "public.documentos_legal, public.categorias, public.subcategorias, public.tipo_documentos, public.carton_documentos, public.cliente_proveedor, public.soat, public.tarjetas, public.cuentas_bancarias, public.lecturas";
 					$where    = "categorias.id_categorias = subcategorias.id_categorias AND subcategorias.id_subcategorias = documentos_legal.id_subcategorias AND tipo_documentos.id_tipo_documentos = documentos_legal.id_tipo_documentos AND carton_documentos.id_carton_documentos = documentos_legal.id_carton_documentos AND cliente_proveedor.id_cliente_proveedor = documentos_legal.id_cliente_proveedor   AND documentos_legal.id_soat = soat.id_soat AND tarjetas.id_tarjetas = documentos_legal.id_tarjetas AND cuentas_bancarias.id_cuentas_bancarias = documentos_legal.id_cuentas_bancarias AND documentos_legal.id_lecturas = lecturas.id_lecturas";
 					$id       = "documentos_legal.fecha_documentos_legal, carton_documentos.numero_carton_documentos";
@@ -305,7 +312,7 @@ class DocumentosController extends ControladorBase{
 						$resul = "";
 						
 						
-						$columnas = "documentos_legal.id_documentos_legal,  documentos_legal.fecha_documentos_legal, categorias.nombre_categorias, subcategorias.nombre_subcategorias, tipo_documentos.nombre_tipo_documentos, cliente_proveedor.nombre_cliente_proveedor, cliente_proveedor.ruc_cliente_proveedor,carton_documentos.numero_carton_documentos, documentos_legal.paginas_documentos_legal, documentos_legal.fecha_desde_documentos_legal, documentos_legal.fecha_hasta_documentos_legal, documentos_legal.ramo_documentos_legal, documentos_legal.numero_poliza_documentos_legal, documentos_legal.ciudad_emision_documentos_legal, soat.cierre_ventas_soat,   documentos_legal.creado , tarjetas.numero_tarjetas, cuentas_bancarias.numero_cuentas_bancarias, lecturas.nombre_lecturas "; 
+						$columnas = "documentos_legal.id_documentos_legal,  documentos_legal.fecha_documentos_legal, categorias.nombre_categorias, subcategorias.nombre_subcategorias, tipo_documentos.nombre_tipo_documentos, cliente_proveedor.nombre_cliente_proveedor, cliente_proveedor.ruc_cliente_proveedor,carton_documentos.numero_carton_documentos, documentos_legal.paginas_documentos_legal, documentos_legal.fecha_desde_documentos_legal, documentos_legal.fecha_hasta_documentos_legal, documentos_legal.ramo_documentos_legal, documentos_legal.numero_poliza_documentos_legal, documentos_legal.ciudad_emision_documentos_legal, soat.cierre_ventas_soat,   documentos_legal.creado , tarjetas.numero_tarjetas, cuentas_bancarias.numero_cuentas_bancarias, lecturas.nombre_lecturas,  "; 
 						$tablas   = "public.documentos_legal, public.categorias, public.subcategorias, public.tipo_documentos, public.carton_documentos, public.cliente_proveedor, public.soat, public.tarjetas, public.cuentas_bancarias, public.lecturas";
 						$where    = "categorias.id_categorias = subcategorias.id_categorias AND subcategorias.id_subcategorias = documentos_legal.id_subcategorias AND tipo_documentos.id_tipo_documentos = documentos_legal.id_tipo_documentos AND carton_documentos.id_carton_documentos = documentos_legal.id_carton_documentos AND cliente_proveedor.id_cliente_proveedor = documentos_legal.id_cliente_proveedor   AND documentos_legal.id_soat = soat.id_soat AND tarjetas.id_tarjetas = documentos_legal.id_tarjetas AND cuentas_bancarias.id_cuentas_bancarias = documentos_legal.id_cuentas_bancarias AND documentos_legal.id_lecturas = lecturas.id_lecturas";
 						$id       = "documentos_legal.fecha_documentos_legal, carton_documentos.numero_carton_documentos";
@@ -1263,7 +1270,15 @@ class DocumentosController extends ControladorBase{
 					
 					$arraySel = "";
 				
-				    $columnas = "documentos_legal.id_documentos_legal,  documentos_legal.fecha_documentos_legal, categorias.nombre_categorias, subcategorias.nombre_subcategorias, tipo_documentos.nombre_tipo_documentos, cliente_proveedor.nombre_cliente_proveedor, cliente_proveedor.ruc_cliente_proveedor,carton_documentos.numero_carton_documentos, documentos_legal.paginas_documentos_legal, documentos_legal.fecha_desde_documentos_legal, documentos_legal.fecha_hasta_documentos_legal, documentos_legal.ramo_documentos_legal, documentos_legal.numero_poliza_documentos_legal, documentos_legal.ciudad_emision_documentos_legal, soat.cierre_ventas_soat,   documentos_legal.creado , tarjetas.numero_tarjetas, cuentas_bancarias.numero_cuentas_bancarias, lecturas.nombre_lecturas "; 
+				    $columnas = "documentos_legal.id_documentos_legal,  documentos_legal.fecha_documentos_legal, categorias.nombre_categorias, subcategorias.nombre_subcategorias, tipo_documentos.nombre_tipo_documentos, cliente_proveedor.nombre_cliente_proveedor, cliente_proveedor.ruc_cliente_proveedor,carton_documentos.numero_carton_documentos, documentos_legal.paginas_documentos_legal, documentos_legal.fecha_desde_documentos_legal, documentos_legal.fecha_hasta_documentos_legal, documentos_legal.ramo_documentos_legal, documentos_legal.numero_poliza_documentos_legal, documentos_legal.ciudad_emision_documentos_legal, soat.cierre_ventas_soat,   documentos_legal.creado , tarjetas.numero_tarjetas, cuentas_bancarias.numero_cuentas_bancarias, lecturas.nombre_lecturas,
+				    		documentos_legal.etapa_documentos_legal, 
+							  documentos_legal.numero_documentos_legal, 
+							  documentos_legal.numero_cheque_documento_legal, 
+							  documentos_legal.nombre_emision_documentos_legal, 
+							  documentos_legal.asunto_documentos_legal, 
+							  documentos_legal.nombre_remitente_documentos_legal, 
+							  documentos_legal.nombre_destinatario_documentos_legal, 
+							  documentos_legal.numero_control_documentos_legal"; 
 					$tablas   = "public.documentos_legal, public.categorias, public.subcategorias, public.tipo_documentos, public.carton_documentos, public.cliente_proveedor, public.soat, public.tarjetas, public.cuentas_bancarias, public.lecturas";
 					$where    = "categorias.id_categorias = subcategorias.id_categorias AND subcategorias.id_subcategorias = documentos_legal.id_subcategorias AND tipo_documentos.id_tipo_documentos = documentos_legal.id_tipo_documentos AND carton_documentos.id_carton_documentos = documentos_legal.id_carton_documentos AND cliente_proveedor.id_cliente_proveedor = documentos_legal.id_cliente_proveedor   AND documentos_legal.id_soat = soat.id_soat AND tarjetas.id_tarjetas = documentos_legal.id_tarjetas AND cuentas_bancarias.id_cuentas_bancarias = documentos_legal.id_cuentas_bancarias AND documentos_legal.id_lecturas = lecturas.id_lecturas";
 					$id       = "documentos_legal.fecha_documentos_legal, carton_documentos.numero_carton_documentos";
@@ -1421,6 +1436,15 @@ class DocumentosController extends ControladorBase{
 							$html.='<th>Cliente/Proveedor</th>';
 							$html.='<th>Carton Documentos</th>';
 							$html.='<th>Nombre Lecturas</th>';
+							$html.='<th>Número Tarjetas</th>';
+							$html.='<th>Etapa Documentos</th>';
+							$html.='<th>Número Documentos</th>';
+							$html.='<th>Número Cheque</th>';
+							$html.='<th>Nombre Emisión</th>';
+							$html.='<th>Asunto</th>';
+							$html.='<th>Remitente</th>';
+							$html.='<th>Destinatario</th>';
+							$html.='<th>Número Control</th>';
 							$html.='<th>Fecha de Subida</th>';
 							$html.='<th></th>';
 							$html.='<th></th>';
@@ -1443,6 +1467,15 @@ class DocumentosController extends ControladorBase{
 								$html.='<td style="color:#000000;font-size:80%;">'.$res->nombre_cliente_proveedor.'</td>';
 								$html.='<td style="color:#000000;font-size:80%;">'.$res->numero_carton_documentos.'</td>';
 								$html.='<td style="color:#000000;font-size:80%;">'.$res->nombre_lecturas.'</td>';
+								$html.='<td style="color:#000000;font-size:80%;">'.$res->numero_tarjetas.'</td>';
+								$html.='<td style="color:#000000;font-size:80%;">'.$res->etapa_documentos_legal.'</td>';
+								$html.='<td style="color:#000000;font-size:80%;">'.$res->numero_documentos_legal.'</td>';
+								$html.='<td style="color:#000000;font-size:80%;">'.$res->numero_cheque_documento_legal.'</td>';
+								$html.='<td style="color:#000000;font-size:80%;">'.$res->nombre_emision_documentos_legal.'</td>';
+								$html.='<td style="color:#000000;font-size:80%;">'.$res->asunto_documentos_legal.'</td>';
+								$html.='<td style="color:#000000;font-size:80%;">'.$res->nombre_remitente_documentos_legal.'</td>';
+								$html.='<td style="color:#000000;font-size:80%;">'.$res->nombre_destinatario_documentos_legal.'</td>';
+								$html.='<td style="color:#000000;font-size:80%;">'.$res->numero_control_documentos_legal.'</td>';
 								$html.='<td style="color:#000000;font-size:80%;">'.$res->creado.'</td>';
 								$html.='<td><div class="right">';
 							if ($_SESSION["tipo_usuario"]=="usuario_local") {

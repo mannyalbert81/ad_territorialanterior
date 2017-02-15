@@ -373,7 +373,7 @@
 	    		<th class="col-sm-1">Nombre Categoria</th>
 	    		<th class="col-sm-1">Nombre SubCategoria</th>
 	    		<th class="col-sm-1">Año</th>
-	    		<th class="col-sm-1">Numero Credito</th>
+	    		<th class="col-sm-1">Numero</th>
 	    		
 	    	
 	  		</tr>
@@ -433,7 +433,7 @@
 		   		</td>
 		   		
 		   		<td>
-		   		 <?php 
+		   		  <?php 
 		   		 $_numero_credito=0;
 		   		if($resultEdit !="" && !empty($resultPol))
 		   		{
@@ -459,7 +459,7 @@
                  		<input type="hidden"  id="numero_credito" name="numero_credito" value="<?php echo  $res->numero_credito_documentos_legal; ?>">	
 					     <?php } } else {?>
 					     
-					     <input type="text" class="form-control" id="txt_numero_credito" name="txt_numero_credito" value=""  placeholder="Ingrese Numero Credito">
+					     <input type="text" class="form-control" id="txt_numero_credito" name="txt_numero_credito" value=""  placeholder="Ingrese Numero">
                  		 <input type="hidden"  id="numero_credito" name="numero_credito" value="0">									
 						 <?php } ?>	  
 					
