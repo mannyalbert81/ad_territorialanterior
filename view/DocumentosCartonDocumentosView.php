@@ -30,22 +30,16 @@
 			  
 		<script >
 		$(document).ready(function(){
-
 		    // cada vez que se cambia el valor del combo
 		    $("#categorias").change(function() {
-
                // obtenemos el combo de subcategorias
                 var $subcategorias = $("#subcategorias");
                // lo vaciamos
                
 				///obtengo el id seleccionado
 				
-
                var id_categorias = $(this).val();
-
-
                $subcategorias.empty();
-
                $subcategorias.append("<option value= " +"0" +" > --TODOS--</option>");
            
                if(id_categorias > 0)
@@ -53,150 +47,106 @@
             	   var datos = {
             			   id_categorias : $(this).val()
                    };
-
-
             	   $.post("<?php echo $helper->url("subCategorias","devuelveSubcategorias"); ?>", datos, function(resultSub) {
-
             		 		$.each(resultSub, function(index, value) {
                		 	    $subcategorias.append("<option value= " +value.id_subcategorias +" >" + value.nombre_subcategorias  + "</option>");	
                        		 });
-
             		 		 	 		   
             		  }, 'json');
-
-
                }
                else
                {
             	   $.post("<?php echo $helper->url("subCategorias","devuelveAllSubcategorias"); ?>", datos, function(resultSub) {
-
    		 		        $.each(resultSub, function(index, value) {
           		 	    $subcategorias.append("<option value= " +value.id_subcategorias +" >" + value.nombre_subcategorias  + "</option>");	
                 	  });
      		  		}, 'json');
-
                }
                
 		    });
     
 		}); 
-
 	</script>
 		
 	<script>
-
 		$(document).ready(function(){
-
 			$("#subcategorias").change(function() {
-
 	               // obtenemos el combo de categorias
 	                var $categorias = $("#categorias");
 	               
 					///obtengo el id seleccionado
 					var id_subcategorias = $(this).val();
-
 	               if(id_subcategorias > 0)
-
 	               {
 	            	   var datos = {
 	            			   id_subcategorias : $(this).val()
 	                   };
-
-
 	            	   //$categorias.append("<option value= " +"0" +" >"+ id_subcategorias  +"</option>");
 	                   $.post("<?php echo $helper->url("subCategorias","devuelveSubBySubcategorias"); ?>", datos, function(resultSub) {
 	            		   
          		 		  $.each(resultSub, function(index, value) {
-
          		 			 $('#categorias').val( value.id_categorias );//To select Blue	 
          		 			//$("'#categorias > option[value="+value.id_categorias"+"]').attr('selected', 'selected'");
 								
 							 });
-
          		 		 	 		   
          		  		}, 'json');
 	                   
 	               }
 	               else
 	               {
-
 	          		 $('#categorias').val( 0 );//To select Blue
-
 			        }
 	               
 	               
 			    });
 		}); 
-
 	</script>
 		
 
 	
 	<script>
-
 		$(document).ready(function(){
-
 		    $("#fecha_documento_hasta").change(function() {
-
-
 		    	var startDate = new Date($('#fecha_documento_desde').val());
 		    	var endDate = new Date($('#fecha_documento_hasta').val());
-
 		    	if (startDate > endDate){
-
 		    		$("#fecha_documento_hasta").val("");
 		    		alert('Fecha documento DESDE mayor a  fecha FINAL');
 		    	}
-
-
 		    	
 			  });
-
 		}); 
-
 	</script>
 		
 
 	
 	<script>
-
 		$(document).ready(function(){
-
 		    $("#fecha_poliza_hasta").change(function() {
-
-
 		    	var startDate = new Date($('#fecha_poliza_desde').val());
 		    	var endDate = new Date($('#fecha_poliza_hasta').val());
-
 		    	if (startDate > endDate){
 		    		$("#fecha_poliza_hasta").val("");
 		    		alert('Fecha poliza DESDE mayor a  fecha FINAL');
 		    	}
 			  });
 		}); 
-
 	</script>
 	
 	
 
 	<script>
-
 		$(document).ready(function(){
-
 		    $("#fecha_subida_hasta").change(function() {
-
-
 		    	var startDate = new Date($('#fecha_subida_desde').val());
 		    	var endDate = new Date($('#fecha_subida_hasta').val());
-
 		    	if (startDate > endDate){
 		    		$("#fecha_subida_hasta").val("");
-
 		    		alert('Fecha subida DESDE mayor a  fecha FINAL');
 		    	}
 			  });
 		}); 
-
 	</script>
 	
 	
@@ -223,7 +173,6 @@
 			load_DocumentosCartonDoc(1);
 			});
 	});
-
 	
 	function load_DocumentosCartonDoc(pagina){
 		
@@ -236,7 +185,6 @@
 		 var doc_fecha_subida_desde=$("#fecha_subida_desde").val();
 		 var doc_fecha_subida_hasta=$("#fecha_subida_hasta").val();
 		 var doc_year=$("#year").val();
-
 		 	
 		  var con_datos={
 				  categorias:doc_categorias,
@@ -250,8 +198,6 @@
 				  action:'ajax',
 				  page:pagina
 				  };
-
-
 		$("#DocumentosCartonDoc").fadeIn('slow');
 		$.ajax({
 			url:"<?php echo $helper->url("DocumentosCartonDocumentos","buscar");?>",
@@ -562,7 +508,6 @@
       
 
        	<?php /*?>
-
         <section class="col-sm-12" style="height:400px;overflow-y:scroll;">
     
     
@@ -658,10 +603,14 @@
        </form>
        </div>
        </div>
+<<<<<<< HEAD
 	    <br>
 		 <br> <br> <br> <br> <br>
+=======
+	     <br>
+>>>>>>> branch 'master' of https://github.com/mannyalbert81/ad_territorial.git
         <footer class="col-lg-12">
            <?php include("view/modulos/footer.php"); ?>
         </footer>
        </body>  
-    </html>
+</html>

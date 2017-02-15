@@ -1032,6 +1032,60 @@ class DocumentosController extends ControladorBase{
 	}
 	
 	
+	public function ReportexCartonCorrespondencia(){
+	
+	
+	
+		$documentos_legal=new DocumentosLegalModel();
+	
+	
+		$columnas = "documentos_legal.id_documentos_legal, documentos_legal.fecha_documentos_legal, categorias.nombre_categorias, subcategorias.nombre_subcategorias, tipo_documentos.nombre_tipo_documentos, cliente_proveedor.ruc_cliente_proveedor, cliente_proveedor.nombre_cliente_proveedor, carton_documentos.numero_carton_documentos, documentos_legal.paginas_documentos_legal, documentos_legal.fecha_desde_documentos_legal, documentos_legal.fecha_hasta_documentos_legal, documentos_legal.ramo_documentos_legal, documentos_legal.numero_poliza_documentos_legal, documentos_legal.ciudad_emision_documentos_legal, documentos_legal.creado , documentos_legal.asunto_documentos_legal, documentos_legal.nombre_destinatario_documentos_legal, substring(documentos_legal.nombre_emision_documentos_legal,1,20) AS nombre_emision_documentos_legal   , substring(documentos_legal.nombre_remitente_documentos_legal,1,20) AS nombre_remitente_documentos_legal ,  documentos_legal.numero_cheque_documento_legal, documentos_legal.numero_control_documentos_legal, documentos_legal.numero_documentos_legal, tarjetas.numero_tarjetas";
+		$tablas   = "public.documentos_legal, public.categorias, public.subcategorias, public.tipo_documentos, public.carton_documentos, public.cliente_proveedor, public.tarjetas";
+		$where    = "categorias.id_categorias = subcategorias.id_categorias AND subcategorias.id_subcategorias = documentos_legal.id_subcategorias AND tipo_documentos.id_tipo_documentos = documentos_legal.id_tipo_documentos AND carton_documentos.id_carton_documentos = documentos_legal.id_carton_documentos AND cliente_proveedor.id_cliente_proveedor = documentos_legal.id_cliente_proveedor AND tarjetas.id_tarjetas = documentos_legal.id_tarjetas";
+		$id       = "documentos_legal.fecha_creado_documentos_legal";
+	
+		session_start();
+	
+	
+		if (isset(  $_SESSION['usuario_usuario']) )
+		{
+	
+			$contenido = trim( $_GET["numero_carton_documentos"]);
+			$numero_carton_documentos = $contenido;
+	
+			if ($contenido !="")
+			{
+					
+				$where_0 = "";
+					
+					
+					
+				//Número Carton
+				$where_0 = " AND carton_documentos.numero_carton_documentos LIKE '$contenido' ";
+					
+					
+					
+				$where_to  = $where .  $where_0 ;
+					
+				//Conseguimos todos los usuarios
+	
+				$columnas2 = " 'TOTALES' AS totales,  SUM(documentos_legal.paginas_documentos_legal) AS total_paginas, COUNT(documentos_legal.id_documentos_legal) AS total_documentos";
+	
+				$resultRep = $documentos_legal->getCondicionesPDF($columnas, $tablas, $where_to, $id);
+	
+				$resultRep2 = $documentos_legal->getByPDF($columnas2,  $tablas, $where_to);
+					
+				$this->report("DocumentosxCartonTarjetas",array(	"resultRep"=>$resultRep, "resultRep2"=>$resultRep2 , "Carton"=>$numero_carton_documentos  ));
+			}
+	
+		}
+			
+	
+	
+	}
+	
+	
+	
 	public function ActualizarDocumentos(){
 	
 		$documentos_legal=new DocumentosLegalModel();
