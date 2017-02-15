@@ -81,11 +81,14 @@
 			</li>
 			<li><a href="index.php?controller=SubCategorias&action=ReporteTotal2" target="blank">ETAPA II - Documentos por SubCategorías</a>
 			</li>
+			<li role="separator" class="divider"></li>
 			
 			<li><a href="index.php?controller=Documentos&action=BuscaxCarton" >Documentos por Cartón</a>
 			</li>
 			
 			<li><a href="index.php?controller=Documentos&action=BuscaxCartonTarjetas" >Documentos por Cartón Tarjetas</a>
+			</li>
+			<li><a href="index.php?controller=Documentos&action=BuscaxCartonCorrespondencia" >Documentos por Cartón Correspondencia</a>
 			</li>
 			<li role="separator" class="divider"></li>
 			
